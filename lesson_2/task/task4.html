@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 4</title>
+</head>
+
+<body>
+	<h2><a href="../index.html">Список Задач</a></h2>
+	<h1>Задача 4</h1>
+	<p> Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.</p>
+
+	<script>
+		// 1 Вводим данные
+		let centimeter = parseFloat(prompt('Длина в Сантиметрах:', '0'))			
+		const ONE_METER_IN_CENTIMETERS = 100
+		const ONE_KILOMETER_IN_METERS = 1000
+		// 2 ищем результат
+		let meters = centimeter / ONE_METER_IN_CENTIMETERS
+		let kilometers = meters / ONE_KILOMETER_IN_METERS
+
+		// 3 выводим результат
+		document.write(`В ${centimeter} сантиметрах будет - ${meters} метров или ${kilometers} километров`)
+	</script>
+</body>
+
+</html>
