@@ -11,7 +11,8 @@
 <body>
 	<h2><a href="../">Список Задач</a></h2>
 	<h1>Задача 4</h1>
-	<p>З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом, працівником, пенсіонером).
+	<p>З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+		працівником, пенсіонером).
 	</p>
 
 
@@ -21,25 +22,25 @@
 
 
 		// 2 ищем результат
-		
+
 
 		// 3 выводим результат	
 		if (userAge < 2)
-		 document.write('Рано ещё в садик')
-		 else if (userAge >= 2 && userAge < 8)
-		 document.write('Ребёнок в садике')
-		 else if (userAge >= 8 && userAge < 18)
-		 document.write('Вы школьник')
-		 else if (userAge >= 18 && userAge < 23)
-		 document.write('Вы студент')
-		 else if (userAge >= 23 && userAge < 60)
-		 document.write('Вы на любимой работе')
-		 else if (userAge >= 60 && userAge < 100)
-		 document.write('Вы на пенсии')
-		 else if (userAge >= 100)
-		 document.write('Скорее всего вы одной ногой уже на том свете')
-		 else 
-		 document.write('Введите корректный возраст')
+			document.write('Рано ещё в садик')
+		else if (userAge > 1 && userAge < 8)
+			document.write('Ребёнок в садике')
+		else if (userAge > 7 && userAge < 18)
+			document.write('Вы школьник')
+		else if (userAge > 17 && userAge < 23)
+			document.write('Вы студент')
+		else if (userAge > 22 && userAge < 60)
+			document.write('Вы на любимой работе')
+		else if (userAge > 59 && userAge < 100)
+			document.write('Вы на пенсии')
+		else if (userAge > 99)
+			document.write('Скорее всего вы одной ногой уже на том свете')
+		else
+			document.write('Введите корректный возраст')
 
 	</script>
 </body>
