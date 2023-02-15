@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 2</h1>
+	<p>З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+	</p>
+
+
+	<script>
+		// 1 Вводим данные		
+		let amountOfMoney = parseFloat(prompt("Введите количество денег которое у Вас есть", '1'))
+		let itemPrice = parseFloat(prompt("Введите сколько стоит товар", '1'))		
+
+		// 2 ищем результат
+		let notEnoughMoney = itemPrice - amountOfMoney
+		let moneyAfterBuyingItem = amountOfMoney - itemPrice
+		const ticketPrice = 4		
+
+		// 3 выводим результат	
+		if (amountOfMoney < itemPrice)			
+		document.write(`Недостаточно денег. Вам нехватает ${notEnoughMoney} грн`)
+
+		else if (amountOfMoney >= itemPrice && moneyAfterBuyingItem < ticketPrice)
+		document.write(`Вы можете купить товар, здача будет ${moneyAfterBuyingItem} грн`)
+
+		else if (amountOfMoney >= itemPrice && moneyAfterBuyingItem >= ticketPrice)
+			document.write(`Вы можете купить товар, здача будет ${moneyAfterBuyingItem} грн, купите лотерею за 4 грн`)
+
+	</script>
+</body>
+
+</html>
