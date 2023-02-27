@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 12</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 12</h1>
+	<p>Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з
+		чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три
+		других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору
+		зображення за номером).
+
+	</p>
+
+
+	<script>
+		const minNumber = 0,
+			maxNumber = 3
+		let firstColumn,
+			secondColumn,
+			thirdColumn
+		let image = ""
+
+
+		for (let i = 0; i < 3; i++) {
+			const randomNumber = minNumber + Math.floor(Math.random() * (maxNumber - minNumber + 1));
+			if (i === 0)
+				firstColumn = randomNumber
+			else if (i === 1)
+				secondColumn = randomNumber
+			else
+				thirdColumn = randomNumber
+				
+			switch (randomNumber) {
+				case 0:
+					image += `<img src="../img/cherry.jpg" style="max-width:50px" alt="cherry">`;
+					break;
+				case 1:
+					image += `<img src="../img/apple.webp" style="max-width:50px" alt="apple">`;
+					break;
+				case 2:
+					image += `<img src="../img/orange.webp" style="max-width:50px" alt="orange">`;
+					break;
+				case 3:
+					image += `<img src="../img/pineapple.webp" style="max-width:50px" alt="pineapple">`;
+					break;
+			}
+		}
+		document.write(image);
+
+		if (firstColumn === secondColumn && secondColumn === thirdColumn) {
+			if (firstColumn === 0)
+				document.write(`вы выграли 100грн`)
+			else if (firstColumn === 1)
+				document.write(`вы выграли 200грн`)
+			else if (firstColumn === 2)
+				document.write(`вы выграли 300грн`)
+			else
+				document.write(`вы выграли 400грн`)
+		}
+		else
+			document.write(`спробуйте ще`)
+
+	</script>
+</body>

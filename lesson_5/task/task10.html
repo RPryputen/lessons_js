@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 10</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 10</h1>
+	<p>Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами
+	</p>
+
+
+	<script>
+		// 1 Вводим данные		
+		const firstNumber = parseInt(prompt('Введите первое число', '0'))
+		const secondNumber = parseInt(prompt('Введите второе число', '0'))
+		let sum = 0
+
+		if (firstNumber > secondNumber) {
+			for (let i = secondNumber + 1; i < firstNumber; i++) {
+				if (i % 2 !== 0)
+					sum += i
+			}
+		}
+		else
+			for (let i = firstNumber + 1; i < secondNumber; i++) {
+				if (i % 2 !== 0)
+					sum += i
+			}
+		document.write(`Сумма всех нечётных чисел между ${firstNumber} и ${secondNumber} равна ${sum}.`)
+
+
+
+
+
+		// 3 выводим результат	
+
+
+	</script>
+</body>

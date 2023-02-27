@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 13</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 13</h1>
+	<p>Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач
+		намагається потопити корабель.
+
+	</p>
+
+
+	<script>
+		const rowLength = parseInt(prompt('Введите длину ряда N:', '1'))
+		const columnLength = parseInt(prompt('Введите длину колонки M:', '1'))
+		let quantityOfProjectiles = parseInt(prompt('Введите количество снарядов:', '1'))
+		const minRandomNumber = 1
+		let shipRowPosition = minRandomNumber + Math.floor(Math.random() * (rowLength - minRandomNumber + 1))
+		let shipColumnPosition = minRandomNumber + Math.floor(Math.random() * (columnLength - minRandomNumber + 1))
+
+		while (quantityOfProjectiles > 0) {
+			let userRowHitNumber = parseInt(prompt('Введите координаты выстрела N:', '1'))
+			let userColumnHitNumber = parseInt(prompt('Введите координаты выстрела M:', '1'))
+			if (shipRowPosition === userRowHitNumber && shipColumnPosition === userColumnHitNumber) {
+				document.write('Вы потопили корабль и победили!')
+				break
+			}		
+			else {
+				quantityOfProjectiles--
+				alert(`Вы промазали! У Вас осталось ${quantityOfProjectiles} выстрелов`)
+			}			
+		}
+		if (quantityOfProjectiles === 0)
+		document.write('Вы проиграли')
+	</script>
+</body>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 14</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 14</h1>
+	<p>Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих пір,
+		поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно
+		ввести).
+	</p>
+
+
+	<script>
+		const minNumber = 500,
+			maxNumber = 1000
+		let priceAmount = minNumber + Math.floor(Math.random() * (maxNumber - minNumber + 1))
+
+		while (priceAmount > 0) {
+			let userPay = parseFloat(prompt(`Вам нужно заплатить ${priceAmount}. Сколько Вы готовы сейчас оплатить?`))
+			priceAmount -= userPay
+		}
+		if (priceAmount === 0)
+			document.write('Вы успешно купили товар')
+		else {			
+			document.write(`Вы успешно купили товар и Ваша здача составляет ${Math.abs(priceAmount)} грн`)
+		}
+
+	</script>
+</body>

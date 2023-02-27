@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 9</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 9</h1>
+	<p>Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+
+	</p>
+
+
+	<script>
+		// 1 Вводим данные		
+		const minNumber = 1
+		let userNumber = parseInt(prompt('Введите число', '1'))
+		// 2 ищем результат
+
+		for (let i = 1; true; i++) {
+			let randomNumber = minNumber + Math.floor(Math.random() * (userNumber - minNumber + 1))
+			let congratz = confirm(`Ваше число ${randomNumber}?`)
+			if (congratz === true && randomNumber === userNumber) {
+				document.write(`Комьютьер угадал Ваше число - ${randomNumber} с ${i} раза<br>`)
+				break
+			}
+			else if (congratz === false && randomNumber === userNumber) {
+				document.write(`Зачем врать и нажимать Нет? Ты загадал число ${userNumber} и компьютер выбрал число ${randomNumber}. НЕ делай так больше<br>Комьютьер угадал Ваше число - ${randomNumber} с ${i} раза<br>`)
+				break
+			}
+			else if (congratz === true && randomNumber != userNumber)
+				alert(`Зачем врать и нажимать Да? Ты загадал число ${userNumber} и компьютер выбрал число ${randomNumber}. Они не совпадают!`)		
+		}
+
+
+
+		// 3 выводим результат	
+
+
+	</script>
+</body>

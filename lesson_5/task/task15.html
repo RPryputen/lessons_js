@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 15</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 15</h1>
+	<p>Користувача поступово вводить показники температури протягом року. Знайти середню температуру.
+	</p>
+
+
+	<script>
+	const twelveMonths = 12
+	let averageTemperature = 0
+
+	for (i = 1;i <= twelveMonths; i++){
+		let userTemperature = parseFloat(prompt(`Введите текущую температуру. Текущий месяц - ${i}`, '5'))
+		averageTemperature += userTemperature
+	}
+	averageTemperature /= twelveMonths
+	document.write(`Средняя температура за 12 месяцев: ${averageTemperature.toFixed(2)} градусов`)
+
+	</script>
+</body>
