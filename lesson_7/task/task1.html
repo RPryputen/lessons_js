@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 1</h1>
+	<p>Створити функцію, яка за номером місяця повертає його назву. </p>
+
+
+	<script>
+		function getSeason(month) {
+			switch (month) {
+				case 1:
+					return "Январь";
+				case 2:
+					return "Февраль";
+				case 3:
+					return "Март";
+				case 4:
+					return "Апрель";
+				case 5:
+					return "Май";
+				case 6:
+					return "Июнь";
+				case 7:
+					return "Июль";
+				case 8:
+					return "Август";
+				case 9:
+					return "Сентябрь";
+				case 10:
+					return "Октябрь";
+				case 11:
+					return "Ноябрь";
+				case 12:
+					return "Декабрь";
+				default:
+					return "Неправильный номер месяца!";
+			}
+		}
+
+		const whatTheMonth = getSeason(parseInt(prompt('Введите номер месяца 1 - 12')));
+		document.write(`Сейчас ${whatTheMonth}`);
+
+
+	</script>
+</body>
+
+</html>

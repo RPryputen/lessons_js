@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 4</title>
+</head>
+
+<body>
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 4</h1>
+	<p> Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість
+		додатних, кількість більших за 100.
+	</p>
+
+
+	<script>
+
+
+		function pairedPositiveOver100(a, b, c) {
+			let paired = 0, positive = 0, over100 = 0
+			if (a % 2 === 0) paired++
+			if (b % 2 === 0) paired++
+			if (c % 2 === 0) paired++
+
+			if (a > 0) positive++
+			if (b > 0) positive++
+			if (c > 0) positive++
+
+			if (a > 100) over100++
+			if (c > 100) over100++
+			if (b > 100) over100++
+
+			return `Количество парных : ${paired}<br> Количество позитивных чисел : ${positive}<br> Количество чисел больше за 100 : ${over100}`
+		}
+		
+		let userFirstNumber = parseInt(prompt('Введите первое число - ', '0'))
+		let userSecondNumber = parseInt(prompt('Введите второе число - ', '0'))
+		let userThirdNumber = parseInt(prompt('Введите третье число - ', '0'))
+		document.write(`Вы выбрали числа : ${userFirstNumber}, ${userSecondNumber}, ${userThirdNumber}<br>`)
+		let resultPairedPositiveOver100 = pairedPositiveOver100(userFirstNumber, userSecondNumber, userThirdNumber)
+		document.write(`${resultPairedPositiveOver100}`)
+
+
+
+	</script>
+</body>
+
+</html>
