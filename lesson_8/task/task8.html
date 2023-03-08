@@ -33,7 +33,7 @@
 		function selectCell(randomArrayNumbers) {
 			let sum = 0
 			for (let i = 1; i <= randomArrayNumbers.length; i++) {
-				const chooseNumberCell = parseInt(prompt(`Выберите ячейку от ${i} до ${randomArrayNumbers.length}`))				
+				const chooseNumberCell = parseInt(prompt(`Выберите ячейку от 1 до ${randomArrayNumbers.length}`))				
 				if (isNaN(chooseNumberCell) === true)
 					return sum					
 				sum += randomArrayNumbers[chooseNumberCell - 1]
