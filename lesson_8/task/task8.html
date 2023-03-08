@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 8</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 8</h1>
+	<p> Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином
+		значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не відмовиться).
+		Знаходити сумарний виграш.
+	</p>
+
+
+	<script>
+		const chooseLengthCell = parseInt(prompt('Выберите количесво ячеек', '1'))
+
+		const randomArrayNumbers = getRandomMinus_500_Plus_500(chooseLengthCell)
+		function getRandomMinus_500_Plus_500(numberOfItems) {
+			const minRandomNumber = -500, maxRandomNumber = 500
+			let arrayNumbers = []
+			for (let i = 0; i < numberOfItems; i++) {
+				let randomNumber = minRandomNumber + Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1))
+				arrayNumbers.push(randomNumber)
+			}
+			return arrayNumbers
+		}
+		function selectCell(randomArrayNumbers) {
+			let sum = 0
+			for (let i = 1; i <= randomArrayNumbers.length; i++) {
+				const chooseNumberCell = parseInt(prompt(`Выберите ячейку от ${i} до ${randomArrayNumbers.length}`))				
+				if (isNaN(chooseNumberCell) === true)
+					return sum					
+				sum += randomArrayNumbers[chooseNumberCell - 1]
+			}
+			return sum
+		}
+		const sumVictoryMoney = selectCell(randomArrayNumbers)
+		document.write(`${randomArrayNumbers}<br>${sumVictoryMoney}`)
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 4</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 4</h1>
+	<p> Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+		<br>• починаються на букву «А»;
+		<br>• перша і остання літери співпадають;
+		<br>• складаються з більше ніш 5 символів;
+	</p>
+
+
+	<script>
+		const platesNumber = ['A4562F', 'F5A2H', 'H457AFH', 'GUWSG462S', 'D45D']
+		const carNumberStartFromA = getNumberStartA(platesNumber)
+		const carNumberStartAndEndSame = getSameStartEndNumber(platesNumber)
+		const CarNumberMoreThenFiveSymbols = getCarNumberMoreThenFiveSymbols(platesNumber)
+
+		function getNumberStartA(array) {
+			let count = 0
+			for (let i = 0; i < array.length; i++) {
+				if (array[i][0] === 'A')
+					count++
+			}
+			return count
+		}
+		function getSameStartEndNumber(array) {
+			let count = 0
+			for (let i = 0; i < array.length; i++) {
+				if (array[i][0] === array[i][array[i].length - 1])
+					count++
+			}
+			return count
+		}
+		function getCarNumberMoreThenFiveSymbols(array) {
+			let count = 0
+			for (let i = 0; i < array.length; i++) {
+				if (array[i].length > 5)
+					count++
+			}
+			return count
+		}
+
+		document.write(`Номера машин: ${platesNumber}<br><br>Количество номеров которые начинаются на A : ${carNumberStartFromA}<br>Количество номеров которые начинаются и заканчиваются одинаково : ${carNumberStartAndEndSame}<br>Количество номеров которые содержат более 5 символов : ${CarNumberMoreThenFiveSymbols}`)
+
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 1</h1>
+	<p>Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься
+		(відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна
+		трійка)). </p>
+
+
+	<script>
+
+
+		// Запрашиваем количество предметов и преобразуем в целое число		
+		const numberOfSubjects = parseInt(prompt(`Введите кол-во предметов`, '1'))
+		const gradeOfSubjects = getNumberOfSubjects(numberOfSubjects)
+		
+
+		// Получаем массив случайных оценок для каждого предмета
+		function getNumberOfSubjects(value) {
+			let subject = []
+			const minRandomNumber = 2, maxRandomNumber = 5
+			for (let i = 0; i < value; i++) {
+				// Генерируем случайную оценку в диапазоне от 2 до 5
+				let randomNumber = minRandomNumber + Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1))
+				subject[i] = randomNumber
+			}
+			return subject
+		}
+
+		function averageValue(array) {
+			let sum = 0
+			// Суммируем все оценки
+			for (let i = 0; i < array.length; i++) {
+				sum += array[i]
+			}
+			// Вычисляем среднее значение
+			let result = sum / array.length
+			return result
+		}
+
+		function getCategoryOfStudent(array) {
+			let sum = 0
+			for (let i = 0; i < array.length; i++) {
+				// Если есть хотя бы одна двойка, то студент - "двоечник" и делаем ретырн
+				if (array[i] < 3)
+					return `двоечник`
+				else if (array[i] === 3)
+					sum++
+			}
+			// Если есть хотя бы одна тройка, то студент - "троечник"
+			if (sum) return `троечник`
+			// Иначе студент - "отличник"
+			return `отличник`
+		}
+
+		// Получаем среднее значение оценок и категорию студента
+		const averageGrade = averageValue(gradeOfSubjects)
+		const CategoryOfStudent = getCategoryOfStudent(gradeOfSubjects)
+
+		// Выводим результаты на экран
+		document.write(`Оценки ученика ${gradeOfSubjects}<br> Средний бал ученика ${averageGrade.toFixed(1)}<br>Категория студента ${CategoryOfStudent}`)
+
+	</script>
+</body>
+
+</html>

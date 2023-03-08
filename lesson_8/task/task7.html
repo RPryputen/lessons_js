@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 7</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 7</h1>
+	<p> Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+		<br>за весь рік;
+		<br>у першій половині року;
+		<br>у другій половині року;
+		<br>за літо;
+		<br>за ІІ квартал;
+		<br>за парні місяці (з парними номерами);
+		<br>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+	</p>
+
+
+	<script>
+
+
+		const payYear = userPayNumberPayPerMonths(12)
+		function userPayNumberPayPerMonths(months) {
+			let arr = []
+			for (let i = 1; i <= months; i++) {
+				const monthIncome = parseFloat(prompt(`Введите платёж за - ${i} месяц`))
+				arr.push(monthIncome)
+			}
+			return arr
+		}
+
+		function getIncomeSum(payYear, startMonthNumber = 1, endMonthNumber = 12) {
+			let sum = 0
+			for (let month = startMonthNumber; month <= endMonthNumber; month++) {
+				sum += payYear[month - 1]
+			}
+			return sum
+		}
+
+		function getEvenSum(array) {
+			let sum = 0
+			for (let i = 0; i < array.length; i++) {
+				if (i % 2)
+					sum += array[i]
+			}
+			return sum
+		}
+
+		function getFirstMonthOfSeason(array) {
+			let sum = 0
+			for (let i = 0, j = 1; i < array.length; i++, j++) {
+				if (j % 3 == 0)
+					sum += array[i]
+			}
+			return sum
+		}
+
+		const sumFullYear = getIncomeSum(payYear, 1, 12)
+		const sumFirstHalfOfYear = getIncomeSum(payYear, 1, 6)
+		const sumSecondHalfOfYear = getIncomeSum(payYear, 7, 12)
+		const sumSummer = getIncomeSum(payYear, 6, 8)
+		const sumSecondQuarter = getIncomeSum(payYear, 4, 6)
+		const sumPairMonths = getEvenSum(payYear)
+		const sumFirstsMonthOfSeason = getFirstMonthOfSeason(payYear)
+
+
+		document.write(`Доход по месяцам : ${payYear}<br>
+		<br>Доход за весь год : ${sumFullYear}<br>
+		Доход за первую половину года : ${sumFirstHalfOfYear}<br>
+		Доход за вторую половину года : ${sumSecondHalfOfYear}<br>
+		Доход за лето : ${sumSummer}<br>
+		Доход за 2й квартал года : ${sumSecondQuarter}<br>
+		Доход по парным месяцам года : ${sumPairMonths}<br>
+		Доход по первым месяцам сезона : ${sumFirstsMonthOfSeason}<br>`)
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 9</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 9</h1>
+	<p> Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів.
+		Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста,
+		якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до
+		тих пір, поки не будуть потоплені усі кораблі.
+	</p>
+
+
+	<script>
+		const userChooseCellNumber = parseInt(prompt('Введите количество ячеек', '1'))
+		const userChooseShipsNumber = parseInt(prompt('Введите количество кораблей', '1'))
+
+		function getCellsAndShipsArray(userChooseCellNumber, userChooseShipsNumber) {
+			const cellsLength = []
+			let shipsCount = 0
+			for (let i = 0; i < userChooseCellNumber; i++)
+				cellsLength.push(0)
+			while (shipsCount < userChooseShipsNumber) {
+				const randomIndex = Math.floor(Math.random() * userChooseCellNumber);
+				if (cellsLength[randomIndex] === 0) {
+					cellsLength[randomIndex] = 1;
+					shipsCount++;
+				}
+			}
+			return cellsLength
+		}
+		function getShotOnShips(array, userChooseShipsNumber) {
+			let count = userChooseShipsNumber
+			while (count > 0) {
+				const shot = parseInt(prompt(`Выберите в какую ячейку выстрелить от 1 до ${array.length}`))
+				if (array[shot - 1] === 1) {
+					array[shot - 1] = 0
+					count--
+				}				
+			}
+			return array
+		}
+
+		const placeOfShips = getCellsAndShipsArray(userChooseCellNumber, userChooseShipsNumber)
+		document.write(`Расположение кораблей ${placeOfShips}<br>`)
+		const allShipsDrowned = getShotOnShips(placeOfShips, userChooseShipsNumber)
+		document.write(`Все корабли потоплены  ${allShipsDrowned}<br>`)
+
+
+	</script>
+</body>
+
+</html>

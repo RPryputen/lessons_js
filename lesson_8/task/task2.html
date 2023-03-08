@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 2</h1>
+	<p>Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+
+		<br>номери днів, протягом яких кількість відвідувачів була меншою за 20;
+		<br>номери днів, коли кількість відвідувачів була мінімальною;
+		<br>номери днів, коли кількість відвідувачів була максимальною;
+		<br>загальну кількість клієнтів у робочі дні та окремо загальну кількість клієнтів на вихідних.
+	</p>
+
+
+	<script>
+
+		function getLessThenTwenty(array) {
+			let count = 0
+			let day = []
+			for (let i = 0; i < array.length; i++) {
+				if (array[i] < 20) {
+					count++
+					day.push(count)
+				}
+				else
+					count++
+			}
+			return day
+		}
+
+		function getMinNumberOfClients(array) {
+			let count = 0
+			let min = array[0]
+			let day = []
+			for (let i = 0; i < array.length; i++) {
+				if (min >= array[i + 1]) {
+					min = array[i + 1]
+				}
+			}
+			for (let j = 0; j < array.length; j++) {
+				if (min === array[j]) {
+					count++
+					day.push(count)
+				}
+				else
+					count++
+			}
+			return day
+		}
+
+		function getMaxNumberOfClients(array) {
+			let count = 0
+			let max = array[0]
+			let day = []
+			for (let i = 0; i < array.length; i++) {
+				if (max <= array[i + 1]) {
+					max = array[i + 1]
+				}
+			}
+			for (let j = 0; j < array.length; j++) {
+				if (max === array[j]) {
+					count++
+					day.push(count)
+				}
+				else
+					count++
+			}
+			return day
+		}
+
+		function getTotalClientsPerWorkDay(array) {
+			let sum = 0
+			for (let i = 0; i < 5; i++)
+				sum += array[i]
+			return sum
+		}
+
+		function getTotalClientsPerDayOff(array) {
+			let sum = 0
+			for (let i = 5; i < 7; i++)
+				sum += array[i]
+			return sum
+		}
+		
+		function getNumberOfClients(days = 7) {
+			let subject = []
+			const minRandomNumber = 1, maxRandomNumber = 50
+			for (let i = 0; i < days; i++) {
+				// Генерируем случайную оценку в диапазоне от 2 до 5
+				let randomNumber = minRandomNumber + Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1))
+				subject[i] = randomNumber
+			}
+			return subject
+		}
+		const randomNumbers = getNumberOfClients()
+		const clientLessThenTwenty = getLessThenTwenty(randomNumbers)
+		const clientMinNumber = getMinNumberOfClients(randomNumbers)
+		const clientMaxNumber = getMaxNumberOfClients(randomNumbers)
+		const clientPerWorkDay = getTotalClientsPerWorkDay(randomNumbers)
+		const clientPerDeyOff = getTotalClientsPerDayOff(randomNumbers)
+
+				document.write(`Количество посетителей: ${randomNumbers}<br><br>Номера дней в которых людей было меньше - 20 : ${clientLessThenTwenty}<br> Номера дней в которых людей было минимальное количество : ${clientMinNumber}<br> Номера дней в которых людей было максимальное количество : ${clientMaxNumber}<br> Количество поситетелей в рабочие дни : ${clientPerWorkDay}<br> Количество поситетелей в выходные дни : ${clientPerDeyOff}`)
+
+
+	</script>
+</body>
+
+</html>
