@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 9</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 9</h1>
+	<p> Дано масив імен. Сформувати масив з перших літер цих імен.
+	</p>
+
+
+	<script>
+
+		const someArray = ['Ваня', 'Иван', 'Василий', 'Вася', 'Олег', 'Кирилл']
+		document.write(`До : ${someArray}<br>`)
+		const firstLetterOfTheName = []
+		someArray.forEach((element, index, arrRef) => {
+			firstLetterOfTheName.push(arrRef[index][0])
+		})
+		document.write(`После : ${firstLetterOfTheName}<br>`)
+
+
+	</script>
+</body>
+
+</html>

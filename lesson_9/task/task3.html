@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 3</h1>
+	<p>Користувач вводить кількість елементів. Створити масив, у якому перші 5 елементів заповнені 1-цями, а інші до
+		кінця масиву заповнені 7-ками.</p>
+
+
+	<script>
+
+		const userElementsNumber = parseInt(prompt('Введите кол-во елементов', '1'))
+		const arrayElements = new Array(userElementsNumber)
+
+		function getElements(num) {
+			num.fill(1, 0, 5)
+			num.fill(7, 5)
+			return num
+		}
+		const resultElements = getElements(arrayElements)
+		document.write(`${resultElements}`)
+
+	</script>
+</body>
+
+</html>
