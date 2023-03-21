@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 5</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 5</h1>
+	<p>Підрахувати кількість змін цін
+	</p>
+
+
+	<script>
+		const arr = [5, 150, 200, 90, 5888, 9203, 9203, 900, 1990, 222, 222, 9999]
+		const changePriceCount = arr.reduce((count, currentNum, index, array) => {
+			if (index === 0)
+				return count
+			if (currentNum !== array[index - 1])
+				return count + 1
+			return count
+		}, 0)
+
+		// document.write(maxNumber)
+		document.write(changePriceCount);
+
+
+
+	</script>
+</body>
+
+</html>

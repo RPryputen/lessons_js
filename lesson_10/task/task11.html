@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 11</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 11</h1>
+	<p>Знайти індекс першої ціни, що більше за 1000
+	</p>
+
+
+	<script>
+		const arr = [5, 150, 200, 90, 5588, 9203, 9203, 900, 1990, 222, 222, 9999]
+		const firstIndexMoreThan1000 = arr.reduce((prevIndex, currentValue, index) => {
+			if (prevIndex === -1 && currentValue > 1000)
+				return index
+			return prevIndex
+		}, -1)
+
+		document.write(firstIndexMoreThan1000);
+
+
+
+	</script>
+</body>
+
+</html>

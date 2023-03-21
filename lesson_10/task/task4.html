@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 4</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 4</h1>
+	<p>Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+	</p>
+
+
+	<script>
+		const arr = [5, 150, 200, 90, 5888, 9203, 1230, 900, 1990, 222, 2421, 9999]
+		const maxNumber = arr.reduce((prevMax, element) =>
+		element > prevMax ? element : prevMax)
+		const percentToMaxNumber = arr.map((number) => {
+			return (number/maxNumber)*100
+		})
+		// document.write(maxNumber)
+		document.write(percentToMaxNumber);
+
+
+
+	</script>
+</body>
+
+</html>

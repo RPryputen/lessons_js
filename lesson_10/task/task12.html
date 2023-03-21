@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 12</title>
+</head>
+
+<body style="font-size: 24px;">
+	<h2><a href="../">Список Задач</a></h2>
+	<h1>Задача 12</h1>
+	<p>Знайти останню ціну, що більше за 1000
+	</p>
+
+
+	<script>
+		const arr = [5, 150, 200, 90, 5588, 9203, 9203, 900, 1990, 222, 1222, 999, 200]
+		const lastPriceMoreThan1000 = arr.reduce((prevNum, currNum) => currNum > 1000 ? currNum : prevNum)
+
+		document.write(lastPriceMoreThan1000);
+
+
+
+	</script>
+</body>
+
+</html>
